@@ -1,0 +1,7 @@
+# Ignore compiled Emacs lisp.
+eping.elc
+flycheck_eping.elc
+
+# Ignore autoloaded elisp.
+eping-autoloads.el
+eping-autoloads.el~
