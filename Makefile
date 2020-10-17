@@ -18,6 +18,7 @@ S_DIRECTORY = "~/.emacs.d/straight/build/s/"
 # Files
 eping = eping.el
 compiled_elisp = eping.elc flycheck_eping.elc
+autoloaded_elisp = eping-autoloads.el eping-autoloads.el~
 
 # Arguments
 emacs_batch_quick = --batch --quick
@@ -66,3 +67,7 @@ lint-elisp-lint : $(eping)
 .PHONY: clean-compiled-elisp
 clean-compiled-elisp :
 > rm $(rm-options) $(compiled_elisp)
+
+.PHONY: clean-autoloaded-elisp
+clean-autoloaded-elisp :
+> rm $(rm-options) $(autoloaded_elisp)
