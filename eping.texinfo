@@ -18,6 +18,7 @@ This manual is for Eping 0.1.0
 * Overview::
 * Dependencies::
 * How to use Eping::
+* Configuration::
 @end menu
 
 @node Overview
@@ -86,5 +87,41 @@ times to ping the domain.  Eping then pings the selected domain the
 specified number of times with @command{ping}.  Eping will say the
 success or failure of @command{ping} to ping the domain using
 @command{espeak}.
+
+@node Configuration
+@chapter Configuration
+
+@cindex Configuration
+
+@section Configure list of domains
+
+@cindex Configure list of domains
+
+@vindex eping-domain-options
+
+The @code{eping-domain-options} variable is a list of domains.  When
+the user runs the @code{ping} function they are prompted to select
+from this list.  The user can configure this to be a list of domains
+of their choice.  Here is an example:
+
+@lisp
+(setq eping-domain-options
+  '("haskell.org" "idris-lang.org" "rust-lang.org"))
+@end lisp
+
+@section Configure number of pings
+
+@cindex Configure number of pings
+
+@vindex eping-number-pings-options
+
+The @code{eping-domain-options} variable is a list of number strings.
+When the user runs the @code{ping} function they are prompted to
+select from this list.  The user can configure this to be a list of
+number strings of their choice.  Here is an example:
+
+@lisp
+(setq eping-number-pings-options '("10" "20" "30"))
+@end lisp
 
 @bye
