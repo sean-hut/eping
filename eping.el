@@ -38,6 +38,10 @@
 
 ;;; Code:
 
+(declare-function -snoc "dash")
+(declare-function -cons* "dash")
+(declare-function s-chomp "s")
+
 (defvar eping-domain-options
   '("wikipedia.org" "startpage.com" "gnu.org")
   "List of domain that Eping will present as options.")
