@@ -72,6 +72,8 @@ lint-elisp-lint : $(eping)
 lint-git-whitespace :
 > git diff --check
 
+documentation : documentation-info documentation-html
+
 documentation-info : $(texinfo)
 > makeinfo --output=$(info_file) $(texinfo)
 
