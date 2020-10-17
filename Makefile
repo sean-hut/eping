@@ -17,10 +17,12 @@ S_DIRECTORY = "~/.emacs.d/straight/build/s/"
 
 # Files
 eping = eping.el
+compiled_elisp = eping.elc flycheck_eping.elc
 
 # Arguments
 emacs_batch_quick = --batch --quick
 emacs_batch = --batch
+rm-options = -f
 
 lint-elisp : lint-byte-compile lint-checkdoc lint-elisp-lint
 
@@ -60,3 +62,7 @@ lint-elisp-lint : $(eping)
 > --eval='(setq indent-tabs-mode nil)' \
 > --funcall=elisp-lint-files-batch \
 > $(eping)
+
+.PHONY: clean-compiled-elisp
+clean-compiled-elisp :
+> rm $(rm-options) $(compiled_elisp)
