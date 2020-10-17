@@ -64,6 +64,9 @@ lint-elisp-lint : $(eping)
 > --funcall=elisp-lint-files-batch \
 > $(eping)
 
+.PHONY: clean-elisp
+clean : clean-compiled-elisp clean-autoloaded-elisp
+
 .PHONY: clean-compiled-elisp
 clean-compiled-elisp :
 > rm $(rm-options) $(compiled_elisp)
