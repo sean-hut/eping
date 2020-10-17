@@ -29,6 +29,8 @@
 
 ;; Package-Requires: ((emacs "25.1") (dash "2.12.0") (s "1.12.0"))
 
+;; Version: 0.1.0-git
+
 ;; Homepage: https://github.com/sean-hut/eping
 
 ;;; Change Log: For all notable changes see CHANGELOG.md
