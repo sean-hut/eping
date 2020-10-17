@@ -38,6 +38,9 @@
 
 ;;; Code:
 
+(defvar eping-domain-options
+  '("wikipedia.org" "startpage.com" "gnu.org")
+  "List of domain that Eping will present as options.")
 
 (provide 'eping)
 ;;; eping.el ends here
