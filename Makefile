@@ -26,7 +26,7 @@ html_directory = docs/html/
 # Arguments
 emacs_batch_quick = --batch --quick
 emacs_batch = --batch
-rm-options = -f
+rm_options = -f
 
 all : lint-git-whitespace lint-elisp clean-elisp
 
@@ -85,8 +85,12 @@ clean : clean-compiled-elisp clean-autoloaded-elisp
 
 .PHONY: clean-compiled-elisp
 clean-compiled-elisp :
-> rm $(rm-options) $(compiled_elisp)
+> rm $(rm_options) $(compiled_elisp)
 
 .PHONY: clean-autoloaded-elisp
 clean-autoloaded-elisp :
-> rm $(rm-options) $(autoloaded_elisp)
+> rm $(rm_options) $(autoloaded_elisp)
+
+.PHONY: clean-info
+clean-info :
+> rm $(rm_options) $(info_file)
