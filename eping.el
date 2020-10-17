@@ -87,20 +87,20 @@ NUMBER-PINGS is how many times to ping the domain."
 
 	(make-process :name "eping"
 		      :command command
-		      :sentinel 'eping-sentinel-minibuffer-output)
+		      :sentinel 'eping--sentinel-minibuffer-output)
 
       (make-process :name "e ping"
 		    :command command
-		    :sentinel 'eping-sentinel-espeak-output))))
+		    :sentinel 'eping--sentinel-espeak-output))))
 
-(defun eping-sentinel-minibuffer-output (process event)
+(defun eping--sentinel-minibuffer-output (process event)
   "Output the process name and event with minibuffer.
 PROCESS is the process the sentinel is watching.
 EVENT is the processes change event."
 
   (message "%s %s" process (s-chomp event)))
 
-(defun eping-sentinel-espeak-output (process event)
+(defun eping--sentinel-espeak-output (process event)
   "Output the process name and event with eSpeak.
 PROCESS is the process the sentinel is watching.
 EVENT is the processes change event."
