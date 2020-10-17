@@ -64,6 +64,9 @@ lint-elisp-lint : $(eping)
 > --funcall=elisp-lint-files-batch \
 > $(eping)
 
+lint-git-whitespace :
+> git diff --check
+
 .PHONY: clean-elisp
 clean : clean-compiled-elisp clean-autoloaded-elisp
 
