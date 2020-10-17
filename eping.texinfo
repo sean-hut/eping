@@ -16,6 +16,7 @@ This manual is for Eping 0.1.0
 
 @menu
 * Overview::
+* Dependencies::
 @end menu
 
 @node Overview
@@ -27,5 +28,25 @@ Eping is an Emacs package that checks internet connectivity using
 @command{ping}.
 
 Eping requires that you have @command{ping} installed for it to work.
+
+@node Dependencies
+@chapter Dependencies
+
+@cindex Dependencies
+
+@section Required Dependency
+
+@cindex Required dependency
+
+Eping requires that you have @command{ping} installed.  Eping uses
+@command{ping} to check internet connectivity.
+
+@section Optional Dependency
+
+@cindex Optional dependency
+
+eSpeak is an optional dependency for Eping.  You need to have
+@command{espeak} installed if you want Eping's result to be spoken to
+you.
 
 @bye
