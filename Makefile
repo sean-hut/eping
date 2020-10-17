@@ -16,3 +16,6 @@ lint-byte-compile : $(eping)
 > --eval='(setq byte-compile-warnings t)' \
 > --eval='(setq byte-compile-error-on-warn t)' \
 > --eval='(byte-compile-file "$(eping)")'
+
+lint-checkdoc : $(eping)
+> emacs $(emacs_batch_quick) --eval='(checkdoc-file "$(eping)")'
