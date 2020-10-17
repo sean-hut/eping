@@ -22,6 +22,8 @@ eping = eping.el
 emacs_batch_quick = --batch --quick
 emacs_batch = --batch
 
+lint-elisp : lint-byte-compile lint-checkdoc lint-elisp-lint
+
 lint-byte-compile : $(eping)
 > emacs $(emacs_batch_quick) \
 > --eval='(setq byte-compile-warnings t)' \
