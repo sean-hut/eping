@@ -46,6 +46,47 @@
   "List of how many times to ping the domain.
 Eping will present this as list to select from for users.")
 
+(defun eping (domain number-pings)
+  "Check internet connectivity with ping.
+
+DOMAIN is the domain to ping.
+NUMBER-PINGS is how many times to ping the domain."
+  (interactive
+
+   (-cons* (ido-completing-read
+	    ;; PROMPT
+	    "Domain to ping: "
+	    ;; CHOICES
+	    eping-domain-options
+	    ;; PREDICATE
+	    nil
+	    ;; REQUIRE-MATCH
+	    t)
+
+	   (ido-completing-read
+	    ;; PROMPT
+	    "Number of pings: "
+	    ;; CHOICES
+	    eping-number-pings-options
+	    ;; PREDICATE
+	    nil
+	    ;; REQUIRE-MATCH
+	    t)
+
+	   ()))
+
+  (let ((command (-snoc (-snoc '("ping" "-c") number-pings) domain)))
+
+    (if (equal current-prefix-arg nil)
+
+	(make-process :name "eping"
+		      :command command
+		      :sentinel 'eping-sentinel-minibuffer-output)
+
+      (make-process :name "e ping"
+		    :command command
+		    :sentinel 'eping-sentinel-espeak-output))))
+
 (defun eping-sentinel-minibuffer-output (process event)
   "Output the process name and event with minibuffer.
 PROCESS is the process the sentinel is watching.
