@@ -53,5 +53,17 @@ EVENT is the processes change event."
 
   (message "%s %s" process (s-chomp event)))
 
+(defun eping-sentinel-espeak-output (process event)
+  "Output the process name and event with eSpeak.
+PROCESS is the process the sentinel is watching.
+EVENT is the processes change event."
+
+  (let* ((espeak-text (format "%s %s" process event))
+
+	 (command (-snoc '("espeak" ) espeak-text)))
+
+    (make-process :name "eping-sentinel-espeak-output"
+		  :command command)))
+
 (provide 'eping)
 ;;; eping.el ends here
