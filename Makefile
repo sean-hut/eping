@@ -94,3 +94,7 @@ clean-autoloaded-elisp :
 .PHONY: clean-info
 clean-info :
 > rm $(rm_options) $(info_file)
+
+.PHONY: clean-html
+clean-html :
+> rm $(rm_options) $(html_directory)
