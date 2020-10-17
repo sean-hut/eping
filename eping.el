@@ -46,5 +46,12 @@
   "List of how many times to ping the domain.
 Eping will present this as list to select from for users.")
 
+(defun eping-sentinel-minibuffer-output (process event)
+  "Output the process name and event with minibuffer.
+PROCESS is the process the sentinel is watching.
+EVENT is the processes change event."
+
+  (message "%s %s" process (s-chomp event)))
+
 (provide 'eping)
 ;;; eping.el ends here
