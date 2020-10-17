@@ -21,6 +21,7 @@ compiled_elisp = eping.elc flycheck_eping.elc
 autoloaded_elisp = eping-autoloads.el eping-autoloads.el~
 texinfo = eping.texinfo
 info_file = docs/eping.info
+html_directory = docs/html/
 
 # Arguments
 emacs_batch_quick = --batch --quick
@@ -73,6 +74,9 @@ lint-git-whitespace :
 
 documentation-info : $(texinfo)
 > makeinfo --output=$(info_file) $(texinfo)
+
+documentation-html : $(texinfo)
+> makeinfo --html --output=$(html_directory) $(texinfo)
 
 .PHONY: clean-elisp
 clean : clean-compiled-elisp clean-autoloaded-elisp
