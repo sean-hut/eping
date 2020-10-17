@@ -42,5 +42,9 @@
   '("wikipedia.org" "startpage.com" "gnu.org")
   "List of domain that Eping will present as options.")
 
+(defconst eping-number-pings-options '("5" "1" "10" "15" "20")
+  "List of how many times to ping the domain.
+Eping will present this as list to select from for users.")
+
 (provide 'eping)
 ;;; eping.el ends here
