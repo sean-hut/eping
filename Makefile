@@ -6,6 +6,7 @@
 ################
 
 # Package directories
+ELISP_LINT_DIRECTORY = "~/.emacs.d/straight/build/elisp-lint/"
 PACKAGE_LINT_DIRECTORY = "~/.emacs.d/straight/build/package-lint/"
 DASH_DIRECTORY = "~/.emacs.d/straight/build/dash/"
 S_DIRECTORY = "~/.emacs.d/straight/build/s/"
@@ -19,6 +20,7 @@ eping = eping.el
 
 # Arguments
 emacs_batch_quick = --batch --quick
+emacs_batch = --batch
 
 lint-byte-compile : $(eping)
 > emacs $(emacs_batch_quick) \
@@ -43,3 +45,16 @@ lint-checkdoc : $(eping)
 #> --funcall=package-refresh-contents \
 #> --funcall=package-lint-batch-and-exit \
 #> $(eping)
+
+lint-elisp-lint : $(eping)
+> emacs $(emacs_batch) \
+> --directory=$(ELISP_LINT_DIRECTORY) \
+> --directory=$(PACKAGE_LINT_DIRECTORY) \
+> --directory=$(DASH_DIRECTORY) \
+> --directory=$(S_DIRECTORY) \
+> --load="elisp-lint.el" \
+> --load="package-lint.el" \
+> --eval='(setq fill-column 70)' \
+> --eval='(setq indent-tabs-mode nil)' \
+> --funcall=elisp-lint-files-batch \
+> $(eping)
