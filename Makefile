@@ -80,6 +80,9 @@ documentation-info : $(texinfo)
 documentation-html : $(texinfo)
 > makeinfo --html --output=$(html_directory) $(texinfo)
 
+.PHONY: clean
+clean : clean-elisp clean-documentation
+
 .PHONY: clean-elisp
 clean : clean-compiled-elisp clean-autoloaded-elisp
 
