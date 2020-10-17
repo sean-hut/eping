@@ -27,6 +27,8 @@
 ;; NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 ;; CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+;; Package-Requires: ((emacs "25.1") (dash "2.12.0") (s "1.12.0"))
+
 ;; Homepage: https://github.com/sean-hut/eping
 
 ;;; Change Log: For all notable changes see CHANGELOG.md
