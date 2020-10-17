@@ -14,5 +14,18 @@
 This manual is for Eping 0.1.0
 @end ifnottex
 
+@menu
+* Overview::
+@end menu
+
+@node Overview
+@chapter Overview
+
+@cindex Overview
+
+Eping is an Emacs package that checks internet connectivity using
+@command{ping}.
+
+Eping requires that you have @command{ping} installed for it to work.
 
 @bye
