@@ -20,6 +20,7 @@ This manual is for Eping 0.1.0
 * How to use Eping::
 * Configuration::
 * Eping License::
+* Index::
 @end menu
 
 @node Overview
@@ -142,5 +143,24 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
+
+@node Index
+@unnumbered Index
+
+@section Concept Index
+
+@printindex cp
+
+@section Keystroke Index
+
+@printindex ky
+
+@section Function Index
+
+@printindex fn
+
+@section Variable Index
+
+@printindex vr
 
 @bye
