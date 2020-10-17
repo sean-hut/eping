@@ -19,6 +19,8 @@ S_DIRECTORY = "~/.emacs.d/straight/build/s/"
 eping = eping.el
 compiled_elisp = eping.elc flycheck_eping.elc
 autoloaded_elisp = eping-autoloads.el eping-autoloads.el~
+texinfo = eping.texinfo
+info_file = docs/eping.info
 
 # Arguments
 emacs_batch_quick = --batch --quick
@@ -68,6 +70,9 @@ lint-elisp-lint : $(eping)
 
 lint-git-whitespace :
 > git diff --check
+
+documentation-info : $(texinfo)
+> makeinfo --output=$(info_file) $(texinfo)
 
 .PHONY: clean-elisp
 clean : clean-compiled-elisp clean-autoloaded-elisp
