@@ -1,0 +1,18 @@
+\input texinfo
+@setfilename eping.info
+
+@titlepage
+@title Eping
+@end titlepage
+
+@contents
+
+@ifnottex
+@node Top
+@top Eping
+
+This manual is for Eping 0.1.0
+@end ifnottex
+
+
+@bye
