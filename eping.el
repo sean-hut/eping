@@ -37,3 +37,7 @@
 ;; Repository: https://github.com/sean-hut/eping
 
 ;;; Code:
+
+
+(provide 'eping)
+;;; eping.el ends here
