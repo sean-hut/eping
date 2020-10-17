@@ -1,0 +1,166 @@
+\input texinfo
+@setfilename eping.info
+
+@titlepage
+@title Eping
+@end titlepage
+
+@contents
+
+@ifnottex
+@node Top
+@top Eping
+
+This manual is for Eping 0.1.0
+@end ifnottex
+
+@menu
+* Overview::
+* Dependencies::
+* How to use Eping::
+* Configuration::
+* Eping License::
+* Index::
+@end menu
+
+@node Overview
+@chapter Overview
+
+@cindex Overview
+
+Eping is an Emacs package that checks internet connectivity using
+@command{ping}.
+
+Eping requires that you have @command{ping} installed for it to work.
+
+@node Dependencies
+@chapter Dependencies
+
+@cindex Dependencies
+
+@section Required Dependency
+
+@cindex Required dependency
+
+Eping requires that you have @command{ping} installed.  Eping uses
+@command{ping} to check internet connectivity.
+
+@section Optional Dependency
+
+@cindex Optional dependency
+
+eSpeak is an optional dependency for Eping.  You need to have
+@command{espeak} installed if you want Eping's result to be spoken to
+you.
+
+@node How to use Eping
+@chapter How to use Eping
+
+@cindex How to use Eping
+
+Eping is used through it's @command{eping} command.
+
+@section Minibuffer Output
+
+@cindex Minibuffer output
+
+@findex eping
+
+@kindex eping minibuffer
+
+@kbd{M-x eping}
+
+You will be promted for a domain to ping and then for a number of
+times to ping the domain.  Eping then pings the selected domain the
+specified number of times with @command{ping}.  Eping outputs to the
+minibuffer the success or failure of @command{ping} to ping the
+domain.
+
+@section eSpeak Output
+
+@cindex eSpeak output
+
+@kindex eping eSpeak
+
+@kbd{C-u M-x eping}
+
+You will be promted for a domain to ping and then for a number of
+times to ping the domain.  Eping then pings the selected domain the
+specified number of times with @command{ping}.  Eping will say the
+success or failure of @command{ping} to ping the domain using
+@command{espeak}.
+
+@node Configuration
+@chapter Configuration
+
+@cindex Configuration
+
+@section Configure list of domains
+
+@cindex Configure list of domains
+
+@vindex eping-domain-options
+
+The @code{eping-domain-options} variable is a list of domains.  When
+the user runs the @code{ping} function they are prompted to select
+from this list.  The user can configure this to be a list of domains
+of their choice.  Here is an example:
+
+@lisp
+(setq eping-domain-options
+  '("haskell.org" "idris-lang.org" "rust-lang.org"))
+@end lisp
+
+@section Configure number of pings
+
+@cindex Configure number of pings
+
+@vindex eping-number-pings-options
+
+The @code{eping-domain-options} variable is a list of number strings.
+When the user runs the @code{ping} function they are prompted to
+select from this list.  The user can configure this to be a list of
+number strings of their choice.  Here is an example:
+
+@lisp
+(setq eping-number-pings-options '("10" "20" "30"))
+@end lisp
+
+@node Eping License
+@appendix Eping License
+
+@cindex License
+
+Copyright @copyright{} 2020 Sean Hutchings
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+
+@node Index
+@unnumbered Index
+
+@section Concept Index
+
+@printindex cp
+
+@section Keystroke Index
+
+@printindex ky
+
+@section Function Index
+
+@printindex fn
+
+@section Variable Index
+
+@printindex vr
+
+@bye
