@@ -17,6 +17,7 @@ This manual is for Eping 0.1.0
 @menu
 * Overview::
 * Dependencies::
+* How to use Eping::
 @end menu
 
 @node Overview
@@ -48,5 +49,42 @@ Eping requires that you have @command{ping} installed.  Eping uses
 eSpeak is an optional dependency for Eping.  You need to have
 @command{espeak} installed if you want Eping's result to be spoken to
 you.
+
+@node How to use Eping
+@chapter How to use Eping
+
+@cindex How to use Eping
+
+Eping is used through it's @command{eping} command.
+
+@section Minibuffer Output
+
+@cindex Minibuffer output
+
+@findex eping
+
+@kindex eping minibuffer
+
+@kbd{M-x eping}
+
+You will be promted for a domain to ping and then for a number of
+times to ping the domain.  Eping then pings the selected domain the
+specified number of times with @command{ping}.  Eping outputs to the
+minibuffer the success or failure of @command{ping} to ping the
+domain.
+
+@section eSpeak Output
+
+@cindex eSpeak output
+
+@kindex eping eSpeak
+
+@kbd{C-u M-x eping}
+
+You will be promted for a domain to ping and then for a number of
+times to ping the domain.  Eping then pings the selected domain the
+specified number of times with @command{ping}.  Eping will say the
+success or failure of @command{ping} to ping the domain using
+@command{espeak}.
 
 @bye
