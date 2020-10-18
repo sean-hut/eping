@@ -54,3 +54,13 @@ The [keep a changelog][changelog] format is used for the changelog.
 Eping uses the [SemVar][semvar] version of semantic versioning.
 
 [semvar]: <https://web.archive.org/web/20201009135328/https://semver.org/>
+
+## Versions of Eping
+
+### Development Version
+
+The development version of Eping is at the head of the `develop` branch.
+
+### Stable Versions
+
+Stable versions of Eping are tagged on the `master` branch.
