@@ -93,7 +93,7 @@ These are the rules for contributing.
 [git-flow]: <https://github.com/sean-hut/contributing-rules/blob/develop/rules/preparation-for-commits/git-flow-branching.md>
 [fetch-merge]: <https://github.com/sean-hut/contributing-rules/blob/develop/rules/preparation-for-commits/fetch-and-merge-before-committing.md>
 [docs]: <https://github.com/sean-hut/contributing-rules/blob/develop/rules/preparation-for-commits/update-documentation.md>
-[run-make]: <https://github.com/sean-hut/contributing-rules/blob/develop/rules/preparation-for-commits/run-make.md>
+[run-make]: <https://github.com/sean-hut/eping/blob/develop/contributing-rules/preparation-for-commits/run-make.md>
 
 ## Committing
 
