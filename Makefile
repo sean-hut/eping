@@ -19,13 +19,16 @@ S_DIRECTORY = "~/.emacs.d/straight/build/s/"
 eping = eping.el
 compiled_elisp = eping.elc flycheck_eping.elc
 autoloaded_elisp = eping-autoloads.el eping-autoloads.el~
+texinfo = eping.texinfo
+info_file = docs/eping.info
+html_directory = docs/html/
 
 # Arguments
 emacs_batch_quick = --batch --quick
 emacs_batch = --batch
-rm-options = -f
+rm_options = -f
 
-all : lint-git-whitespace lint-elisp clean-elisp
+all : lint-elisp lint-git-whitespace clean documentation
 
 lint-elisp : lint-byte-compile lint-checkdoc lint-elisp-lint
 
@@ -69,13 +72,35 @@ lint-elisp-lint : $(eping)
 lint-git-whitespace :
 > git diff --check
 
+documentation : documentation-info documentation-html
+
+documentation-info : $(texinfo)
+> makeinfo --output=$(info_file) $(texinfo)
+
+documentation-html : $(texinfo)
+> makeinfo --html --output=$(html_directory) $(texinfo)
+
+.PHONY: clean
+clean : clean-elisp clean-documentation
+
 .PHONY: clean-elisp
 clean : clean-compiled-elisp clean-autoloaded-elisp
 
 .PHONY: clean-compiled-elisp
 clean-compiled-elisp :
-> rm $(rm-options) $(compiled_elisp)
+> rm $(rm_options) $(compiled_elisp)
 
 .PHONY: clean-autoloaded-elisp
 clean-autoloaded-elisp :
-> rm $(rm-options) $(autoloaded_elisp)
+> rm $(rm_options) $(autoloaded_elisp)
+
+.PHONY: clean-documentation
+clean : clean-info clean-html
+
+.PHONY: clean-info
+clean-info :
+> rm $(rm_options) $(info_file)
+
+.PHONY: clean-html
+clean-html :
+> rm $(rm_options) $(html_directory)*
