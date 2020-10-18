@@ -6,3 +6,9 @@
 connectivity using `ping`.
 
 [emacs]: <https://www.gnu.org/software/emacs/>
+
+## Documentation
+
+You can read the documentation with `info` or in Emacs with:
+
+`C-h i d m eping`.
