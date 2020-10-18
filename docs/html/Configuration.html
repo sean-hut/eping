@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Configuration (Eping)</title>
+
+<meta name="description" content="Configuration (Eping)">
+<meta name="keywords" content="Configuration (Eping)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Eping-License.html" rel="next" title="Eping License">
+<link href="How-to-use-Eping.html" rel="prev" title="How to use Eping">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Configuration"></span><div class="header">
+<p>
+Next: <a href="Eping-License.html" accesskey="n" rel="next">Eping License</a>, Previous: <a href="How-to-use-Eping.html" accesskey="p" rel="prev">How to use Eping</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="Configuration-1"></span><h2 class="chapter">4 Configuration</h2>
+
+<span id="index-Configuration"></span>
+
+<span id="Configure-list-of-domains"></span><h3 class="section">4.1 Configure list of domains</h3>
+
+<span id="index-Configure-list-of-domains"></span>
+
+<span id="index-eping_002ddomain_002doptions"></span>
+
+<p>The <code>eping-domain-options</code> variable is a list of domains.  When
+the user runs the <code>ping</code> function they are prompted to select
+from this list.  The user can configure this to be a list of domains
+of their choice.  Here is an example:
+</p>
+<div class="lisp">
+<pre class="lisp">(setq eping-domain-options
+  '(&quot;haskell.org&quot; &quot;idris-lang.org&quot; &quot;rust-lang.org&quot;))
+</pre></div>
+
+<span id="Configure-number-of-pings"></span><h3 class="section">4.2 Configure number of pings</h3>
+
+<span id="index-Configure-number-of-pings"></span>
+
+<span id="index-eping_002dnumber_002dpings_002doptions"></span>
+
+<p>The <code>eping-domain-options</code> variable is a list of number strings.
+When the user runs the <code>ping</code> function they are prompted to
+select from this list.  The user can configure this to be a list of
+number strings of their choice.  Here is an example:
+</p>
+<div class="lisp">
+<pre class="lisp">(setq eping-number-pings-options '(&quot;10&quot; &quot;20&quot; &quot;30&quot;))
+</pre></div>
+
+
+
+
+</body>
+</html>
