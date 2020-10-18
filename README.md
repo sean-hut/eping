@@ -40,3 +40,11 @@ Links for more information on the BSD Zero Clause License:
 [landley]: <https://web.archive.org/web/20200909121328/https://landley.net/toybox/license.html>
 [spdx]: <https://web.archive.org/web/20200909121345/https://spdx.org/licenses/0BSD.html>
 [osi]: <https://web.archive.org/web/20200923194052/https://opensource.org/licenses/0BSD>
+
+## Changelog
+
+The changelog file is: CHANGELOG.md
+
+The [keep a changelog][changelog] format is used for the changelog.
+
+[changelog]: <https://web.archive.org/web/20201004165239/https://keepachangelog.com/en/1.0.0/>
