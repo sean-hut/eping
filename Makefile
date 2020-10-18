@@ -28,7 +28,7 @@ emacs_batch_quick = --batch --quick
 emacs_batch = --batch
 rm_options = -f
 
-all : lint-git-whitespace lint-elisp clean-elisp
+all : lint-elisp lint-git-whitespace clean documentation
 
 lint-elisp : lint-byte-compile lint-checkdoc lint-elisp-lint
 
