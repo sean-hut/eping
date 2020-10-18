@@ -20,7 +20,7 @@ eping = eping.el
 compiled_elisp = eping.elc flycheck_eping.elc
 autoloaded_elisp = eping-autoloads.el eping-autoloads.el~
 texinfo = eping.texinfo
-info_file = docs/eping.info
+info_file = eping.info
 html_directory = docs/html/
 
 # Arguments
