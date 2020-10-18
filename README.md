@@ -65,7 +65,9 @@ The development version of Eping is at the head of the `develop` branch.
 
 ### Stable Versions
 
-Stable versions of Eping are tagged on the `master` branch.
+The current stable revision is `0.1.0`.
+
+All stable versions of Eping are tagged on the `master` branch.
 
 # Contributing
 
