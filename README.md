@@ -9,9 +9,11 @@ connectivity using `ping`.
 
 ## Documentation
 
-You can read the documentation with `info` or in Emacs with:
+Documentation reading options:
 
-`C-h i d m eping`.
+- https://sean-hut.github.io/eping/
+- with `info`
+- in Emacs with: `C-h i d m eping`
 
 ## Runtime Dependencies
 
