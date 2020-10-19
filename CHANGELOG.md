@@ -23,6 +23,11 @@ This project uses the [ISO 8601 date format][iso] of (YYYY-MM-DD).
 
 ## [Unreleased]
 
+## [0.1.1] - 2020-10-19
+
+### Fixed
+- Use lexical bindings to improve performance.
+
 ## [0.1.0] - 2020-10-18
 
 ### Add
