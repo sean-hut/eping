@@ -1,4 +1,4 @@
-;;; eping.el --- Ping websites to check internet connectivity
+;;; eping.el --- Ping websites to check internet connectivity -*- lexical-binding: t -*-
 
 ;; Copyright © 2020 Sean Hutchings
 
