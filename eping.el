@@ -1,4 +1,4 @@
-;;; eping.el --- Ping websites to check internet connectivity
+;;; eping.el --- Ping websites to check internet connectivity -*- lexical-binding: t -*-
 
 ;; Copyright © 2020 Sean Hutchings
 
@@ -29,7 +29,7 @@
 
 ;; Package-Requires: ((emacs "25.1") (dash "2.12.0") (s "1.12.0"))
 
-;; Version: 0.1.0
+;; Version: 0.1.1
 
 ;; Homepage: https://github.com/sean-hut/eping
 
@@ -52,7 +52,7 @@
   '("wikipedia.org" "startpage.com" "gnu.org")
   "List of domain that Eping will present as options.")
 
-(defconst eping-number-pings-options '("5" "1" "10" "15" "20")
+(defvar eping-number-pings-options '("5" "1" "10" "15" "20")
   "List of how many times to ping the domain.
 Eping will present this as list to select from for users.")
 

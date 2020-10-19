@@ -11,7 +11,7 @@
 @node Top
 @top Eping
 
-This manual is for Eping 0.1.0
+This manual is for Eping 0.1.1
 @end ifnottex
 
 @menu
