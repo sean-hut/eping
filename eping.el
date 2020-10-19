@@ -1,4 +1,4 @@
-;;; eping.el --- Ping websites to check internet connectivity
+;;; eping.el --- Ping websites to check internet connectivity -*- lexical-binding: t -*-
 
 ;; Copyright © 2020 Sean Hutchings
 
@@ -48,11 +48,11 @@
 (declare-function -cons* "dash")
 (declare-function s-chomp "s")
 
-(defvar eping-domain-options
+(defcustom eping-domain-options
   '("wikipedia.org" "startpage.com" "gnu.org")
   "List of domain that Eping will present as options.")
 
-(defconst eping-number-pings-options '("5" "1" "10" "15" "20")
+(defcustom eping-number-pings-options '("5" "1" "10" "15" "20")
   "List of how many times to ping the domain.
 Eping will present this as list to select from for users.")
 
