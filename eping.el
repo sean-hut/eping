@@ -44,9 +44,8 @@
 
 ;;; Code:
 
-(declare-function -snoc "dash")
-(declare-function -cons* "dash")
-(declare-function s-chomp "s")
+(require 'dash)
+(require 's)
 
 (defvar eping-domain-options
   '("wikipedia.org" "startpage.com" "gnu.org")
@@ -56,6 +55,7 @@
   "List of how many times to ping the domain.
 Eping will present this as list to select from for users.")
 
+;;;###autoload
 (defun eping (domain number-pings)
   "Check internet connectivity with ping.
 
