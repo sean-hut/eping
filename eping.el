@@ -1,20 +1,16 @@
 ;;; eping.el --- Ping websites to check internet connectivity -*- lexical-binding: t -*-
 
-;; Copyright © 2020 Sean Hutchings
+;; Copyright © 2020 Sean Hutchings <seanhut@yandex.com>
 
 ;; Author: Sean Hutchings <seanhut@yandex.com>
-
 ;; Maintainer: Sean Hutchings <seanhut@yandex.com>
-
 ;; Created: 2020-10-16
-
 ;; Keywords: comm, processes, terminals, unix
-
+;; Package-Requires: ((emacs "25.1"))
+;; Version: 0.1.1-git
+;; Homepage: https://github.com/sean-hut/eping
 ;; License: BSD Zero Clause License (SPDX: 0BSD)
 
-;; License Contents:
-;; Copyright © 2020 Sean Hutchings <seanhut@yandex.com>
-;;
 ;; Permission to use, copy, modify, and/or distribute this software
 ;; for any purpose with or without fee is hereby granted.
 ;;
@@ -27,15 +23,10 @@
 ;; NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 ;; CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-;; Package-Requires: ((emacs "25.1") (dash "2.12.0") (s "1.12.0"))
-
-;; Version: 0.1.1-git
-
-;; Homepage: https://github.com/sean-hut/eping
-
 ;;; Change Log: For all notable changes see CHANGELOG.md
 
 ;;; Commentary:
+
 ;; Ping websites to check internet connectivity.
 ;;
 ;; Repository: https://github.com/sean-hut/eping
@@ -44,77 +35,48 @@
 
 ;;; Code:
 
-(declare-function -snoc "dash")
-(declare-function -cons* "dash")
-(declare-function s-chomp "s")
+(require 'subr-x)
 
 (defvar eping-domain-options
   '("wikipedia.org" "startpage.com" "gnu.org")
-  "List of domain that Eping will present as options.")
+  "List of domains that Eping will present as options.")
 
 (defvar eping-number-pings-options '("5" "1" "10" "15" "20")
   "List of how many times to ping the domain.
 Eping will present this as list to select from for users.")
 
-(defun eping (domain number-pings)
+(defun eping (domain number-pings &optional speak)
   "Check internet connectivity with ping.
 
 DOMAIN is the domain to ping.
-NUMBER-PINGS is how many times to ping the domain."
+NUMBER-PINGS is how many times to ping the domain.
+With prefix arg SPEAK, the output is spoken by espeak."
   (interactive
+   (list (completing-read "Domain to ping: " eping-domain-options nil t)
+         (completing-read "Number of pings: " eping-number-pings-options nil t)
+         current-prefix-arg))
 
-   (-cons* (ido-completing-read
-	    ;; PROMPT
-	    "Domain to ping: "
-	    ;; CHOICES
-	    eping-domain-options
-	    ;; PREDICATE
-	    nil
-	    ;; REQUIRE-MATCH
-	    t)
-
-	   (ido-completing-read
-	    ;; PROMPT
-	    "Number of pings: "
-	    ;; CHOICES
-	    eping-number-pings-options
-	    ;; PREDICATE
-	    nil
-	    ;; REQUIRE-MATCH
-	    t)
-
-	   ()))
-
-  (let ((command (-snoc (-snoc '("ping" "-c") number-pings) domain)))
-
-    (if (equal current-prefix-arg nil)
-
-	(make-process :name "eping"
-		      :command command
-		      :sentinel 'eping--sentinel-minibuffer-output)
-
-      (make-process :name "e ping"
-		    :command command
-		    :sentinel 'eping--sentinel-espeak-output))))
+  (let ((command (list "ping" "-c" number-pings domain)))
+    (make-process :name "eping"
+                  :command command
+                  :sentinel (if speak
+                                'eping--sentinel-espeak-output
+                              'eping--sentinel-minibuffer-output))))
 
 (defun eping--sentinel-minibuffer-output (process event)
   "Output the process name and event with minibuffer.
 PROCESS is the process the sentinel is watching.
 EVENT is the processes change event."
-
-  (message "%s %s" process (s-chomp event)))
+  (message "%s %s" process (string-trim-right event)))
 
 (defun eping--sentinel-espeak-output (process event)
   "Output the process name and event with eSpeak.
 PROCESS is the process the sentinel is watching.
 EVENT is the processes change event."
-
   (let* ((espeak-text (format "%s %s" process event))
-
-	 (command (-snoc '("espeak" ) espeak-text)))
-
+         (command (list "espeak"  espeak-text)))
     (make-process :name "eping-sentinel-espeak-output"
-		  :command command)))
+                  :command command)))
 
 (provide 'eping)
 ;;; eping.el ends here
