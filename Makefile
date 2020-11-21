@@ -14,11 +14,12 @@ PACKAGE_LINT_DIRECTORY = "~/.emacs.d/straight/build/package-lint/"
 ####################
 
 # Files
-eping = eping.el
-compiled_elisp = eping.elc flycheck_eping.elc
-autoloaded_elisp = eping-autoloads.el eping-autoloads.el~
-texinfo = eping.texinfo
-info_file = eping.info
+name = eping
+main = $(name).el
+compiled_elisp = $(main)c flycheck_$(main)c
+autoloaded_elisp = $(name)-autoloads.el $(name)-autoloads.el~
+texinfo = $(name).texinfo
+info_file = $(name).info
 html_directory = docs/
 
 # Arguments
@@ -30,29 +31,29 @@ all : lint-elisp lint-git-whitespace clean documentation
 
 lint-elisp : lint-byte-compile lint-checkdoc lint-elisp-lint
 
-lint-byte-compile : $(eping)
+lint-byte-compile : $(main)
 > emacs $(emacs_batch_quick) \
 > --eval='(setq byte-compile-warnings t)' \
 > --eval='(setq byte-compile-error-on-warn t)' \
-> --eval='(byte-compile-file "$(eping)")'
+> --eval='(byte-compile-file "$(main)")'
 
-lint-checkdoc : $(eping)
-> emacs $(emacs_batch_quick) --eval='(checkdoc-file "$(eping)")'
+lint-checkdoc : $(main)
+> emacs $(emacs_batch_quick) --eval='(checkdoc-file "$(main)")'
 
 # pakace-lint does not work with straight package manager
 # Use package-lint through elisp-lint
 # because of package-lint issue #153
 # https://github.com/purcell/package-lint/issues/153
-# lint-package-lint : $(eping)
+# lint-package-lint : $(main)
 #> emacs $(emacs_batch) \
 #> --directory=$(PACKAGE_LINT_DIRECTORY) \
 #> --load="package-lint.el" \
 #> --eval='(setq package-lint-batch-fail-on-warnings t)' \
 #> --funcall=package-refresh-contents \
 #> --funcall=package-lint-batch-and-exit \
-#> $(eping)
+#> $(main)
 
-lint-elisp-lint : $(eping)
+lint-elisp-lint : $(main)
 > emacs $(emacs_batch) \
 > --directory=$(ELISP_LINT_DIRECTORY) \
 > --directory=$(PACKAGE_LINT_DIRECTORY) \
@@ -61,7 +62,7 @@ lint-elisp-lint : $(eping)
 > --eval='(setq fill-column 70)' \
 > --eval='(setq indent-tabs-mode nil)' \
 > --funcall=elisp-lint-files-batch \
-> $(eping)
+> $(main)
 
 lint-git-whitespace :
 > git diff --check
