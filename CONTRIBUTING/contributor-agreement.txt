@@ -1,0 +1,54 @@
+Contributor Agreement
+Version 0.2.0
+
+1. The definitions in this section are referred to by other sections
+   in this document by using the defined terms in all capital letters.
+
+AGREEMENT: the agreement detailed in this document.
+PROJECT: the source code repository for
+	 eping
+DERIVATIONS: any derivations of the PROJECT.
+CONTRIBUTIONS: anything that is submitted for inclusion in
+	       the PROJECT at any time.
+GPG: GNU Privacy Guard is a software program that can create
+     electronic signatures.
+SIGNER: a person who has made CONTRIBUTIONS and who signs this
+ 	AGREEMENT with GPG.
+PROJECT OWNER: the PROJECT's owner is
+	       Sean Hutchings
+	       seanhut@yandex.com
+USERS: all the people that use the PROJECT or DERIVATIONS.
+GIT: Git is version control software.
+SIGN OFF: GIT's commit functionality of --signoff and --gpg-sign.
+
+2. The SIGNER has the right and power to enter into this AGREEMENT.
+
+3. The SIGNER is the only creator and copyright holder of the
+   CONTRIBUTIONS they submit to the PROJECT.
+
+4. The SIGNER assign and transfers copyright of all their
+   CONTRIBUTIONS to the PROJECT without reservation or exclusion to
+   the PROJECT OWNER.
+
+5. The SIGNER grants the PROJECT OWNER and USERS a perpetual,
+   worldwide, non-exclusive, no-charge, royalty-free, irrevocable patent
+   license for any patent claims that are infringed by the SIGNER's
+   CONTRIBUTIONS alone or in combination with any other CONTRIBUTIONS.
+
+6. The SIGNER will use GIT's SIGN OFF functionality when submitting any
+   CONTRIBUTIONS to the PROJECT.
+
+7. The SIGNER reaffirm this AGREEMENT with every submission of
+   CONTRIBUTIONS to the PROJECT that uses GIT's SIGN OFF functionality.
+
+8. The SIGNER has retrieved good and valuable consideration.
+
+9. This AGREEMENT is binding upon the legal successors.
+
+10. This AGREEMENT is effective at the time of signing.
+
+11. This AGREEMENT is the entire agreement.
+
+12. If any part of this AGREEMENT is found to be invalid or
+    unenforceable, that particular part, and not the entire AGREEMENT,
+    will be inoperative.
