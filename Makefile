@@ -8,8 +8,6 @@
 # Package directories
 ELISP_LINT_DIRECTORY = "~/.emacs.d/straight/build/elisp-lint/"
 PACKAGE_LINT_DIRECTORY = "~/.emacs.d/straight/build/package-lint/"
-DASH_DIRECTORY = "~/.emacs.d/straight/build/dash/"
-S_DIRECTORY = "~/.emacs.d/straight/build/s/"
 
 ####################
 # Internal variables
@@ -48,8 +46,6 @@ lint-checkdoc : $(eping)
 # lint-package-lint : $(eping)
 #> emacs $(emacs_batch) \
 #> --directory=$(PACKAGE_LINT_DIRECTORY) \
-#> --directory=$(DASH_DIRECTORY) \
-#> --directory=$(S_DIRECTORY) \
 #> --load="package-lint.el" \
 #> --eval='(setq package-lint-batch-fail-on-warnings t)' \
 #> --funcall=package-refresh-contents \
@@ -60,8 +56,6 @@ lint-elisp-lint : $(eping)
 > emacs $(emacs_batch) \
 > --directory=$(ELISP_LINT_DIRECTORY) \
 > --directory=$(PACKAGE_LINT_DIRECTORY) \
-> --directory=$(DASH_DIRECTORY) \
-> --directory=$(S_DIRECTORY) \
 > --load="elisp-lint.el" \
 > --load="package-lint.el" \
 > --eval='(setq fill-column 70)' \
