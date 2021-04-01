@@ -56,7 +56,10 @@ With prefix arg SPEAK, the output is spoken by espeak."
          (completing-read "Number of pings: " eping-number-pings-options nil t)
          current-prefix-arg))
 
-  (let ((command (list "ping" "-c" number-pings domain)))
+  (let ((command (list "ping" (if (eq system-type 'windows-nt)
+				  "-n"
+				"-c")
+		       number-pings domain)))
     (make-process :name "eping"
                   :command command
                   :sentinel (if speak
